@@ -1,29 +1,222 @@
+# METANOIA - MERN Stack
+# Live URL
 https://worried-jade-uniform.cyclic.app/
+Welcome to METANOIA! This project is a full-stack application built using the MERN (MongoDB, Express, React, Node.js) stack. It aims to provide an E-Commerce Website for Premium Watches.
+## Features
+- **User Registration and Authentication System:** Users can register and log in securely.
+- **Product Browsing:** Browse Watches by their categories, names, descriptions, and prices.
+- **Cart and Checkout:** Easily add watches to your cart, adjust quantities, and proceed to a secure checkout, making your purchase process smooth and efficient.
+- **Order Tracking:** Receive email notifications for order status and delivery updates.
+- **Product Reviews and Ratings:** Users can share their feedback through reviews and ratings.
+- **User Profiles:** Manage user profiles and view order history.
 
-# MERNSTACK-Website
-MERN STACK website
-Welcome to our E-Commerce Watches Website! This platform offers a curated collection of exquisite watches, combining modern design with timeless elegance. Built using the MERN (MongoDB, Express.js, React, Node.js) stack, our website provides a seamless and secure shopping experience for watch enthusiasts worldwide.
+- **Admin Management:** Admin users have access to manage products, orders, and users, ensuring smooth operation and maintenance of the platform.
 
-Features
-Diverse Collection: Explore a wide range of meticulously crafted watches, from classic to contemporary styles, catering to various tastes and preferences.
+- **Responsive UI:** The application offers a responsive and user-friendly user interface.
 
-User-Friendly Interface: Our intuitive and visually appealing interface makes browsing and shopping for watches a breeze, ensuring a delightful experience for all users.
+# Technologies Used
+#### 1.Frontend: React
+#### 2.Backend: Express.js
+#### 3.Database: MongoDB
 
-User Accounts: Create your personalized account to save favorite items, track orders, and enjoy a seamless checkout process.
 
-Cart and Checkout: Easily add watches to your cart, adjust quantities, and proceed to a secure checkout, making your purchase process smooth and efficient.
 
-Order Tracking: Keep tabs on your order history and track the status of your shipments, giving you peace of mind from purchase to delivery.
 
-Admin Management: Admin users have access to manage products, orders, and users, ensuring smooth operation and maintenance of the platform.
 
-Responsive Design: Whether you're browsing on a desktop, tablet, or smartphone, our website adapts to your device, ensuring a consistent and enjoyable experience.
+## API Reference
+#### Singup
+```http
+  POST /api/signup
+```
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| username | `string` | **Required**. Enter username |
+| email | `string` | **Required**. Enter Email |
+| password | `string` | **Required**. Enter Password |
 
-Explore our collection of watches and find the perfect timepiece that complements your style. Join us in celebrating the artistry and precision of horology at E-Commerce Watches Website.
+#### Login
+```http
+  POST /api/login
+```
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| email      | `string` | **Required**. Enter Email |
+| password | `string` | **Required**. Enter Password |
 
-Feel free to tailor this description to match the specific features and attributes of your e-commerce website for watches. This description will give users a brief overview of what your platform offers and why they should explore it.
+#### Delete User
+```http
+  DELETE /api/deleteuser/:email
+```
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| id     | `string` | **Required**. User _id |
 
-End Points
-Product Endpoints: GET /api/get-all-products: Fetch a list of all available watches. GET /api/get-product-by-id/:_id: Fetch details of a specific watch by its ID. GET /api/get-product-by-brand/:brand Fetch details of a specific watch by its Brand. GET /api/get-product-by-category/:category Fetch details of a specific watch by its Category. POST /api/create-product: Add a new watch to the store (admin access required). PUT /api/update-product/:id: Update details of a watch (admin access required). DELETE /api/delete-product/:_id: Delete a watch from the store (admin access required).
+#### All User
+```http
+  GET /api/getallusers
+```
+   | Description                |
+| :------------------------- |
+| Display All User |
 
-readme.so
+#### Update User
+
+```http
+  PUT /api/updateuser/:id
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| Id | `string` | **Required**. User |
+
+#### Create Category
+```http
+  POST /api/create-category
+```
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| Category Name | `string` | **Required**. Name |
+|Category Image| `string` | **Required**. Enter Image |
+
+#### Category By id
+```http
+  GET /api/get-category-by-id/:_id
+```
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| id     | `string` | **Required**. category _id |
+
+#### All Category
+```http
+  GET /api/get-all-categories
+```
+| Description                |
+| :------------------------- |
+| Display All Categories |
+
+#### Update Category 
+
+```http
+  PUT /api/update-category
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| Id | `string` | **Required**. Category |
+
+#### Delete Category
+```http
+  DELETE /api/delete-category/:_id
+```
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| id     | `string` | **Required**. category _id |
+
+
+#### Create Brand
+```http
+  POST /api/create-brand
+```
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| Brand Name | `string` | **Required**. Name |
+| Brand Image| `string` | **Required**. Enter Image |
+
+#### All Brand
+```http
+  GET /api/get-all-brands
+```
+| Description                |
+| :------------------------- |
+| Display All Brands |
+
+#### Search Brands by id
+```http
+  GET /api/get-brand-by-Id/:_id
+```
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| id     | `string` | **Required**. Brand _id |
+
+#### Update Brand
+
+```http
+  PUT /api/update-brand/:_id
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| Id | `string` | **Required**. Brand |
+
+
+
+
+#### Delete Brand
+```http
+  delete /api/delete-brand/:_id
+```
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| id     | `string` | **Required**. Brand_id |
+
+#### Create Products
+```http
+  POST /api/create-product
+```
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| ProductName | `string` | **Required**. Name |
+| thumbnail| `string` | **Required**. Enter Image |
+| Price| `string` | **Required**. Enter Price |
+| description| `string` | **Required**. Enter description |
+| category| `string` | **Required**. Enter category |
+| Brand | `string` | **Required**. Enter brand |
+
+#### All Product
+
+```http
+  GET /api/get-all-products
+```
+| Description                |
+| :------------------------- |
+| Display All product |
+
+
+#### Product by Category
+```http
+  GET /api/get-product-by-category/:category
+```
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| category   | `string` | provide category name |
+
+#### Product by Brand
+```http
+  GET /api/get-product-by-brand/:brand
+```
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| Brand | `string` | provide brand name |
+
+#### Update Product
+
+```http
+  PUT /api/update-product/:id
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| Id | `string` | **Required**. Product |
+
+
+
+
+#### Delete Product 
+```http
+  DELETE /api/delete-product/:_id
+```
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| id     | `string` | **Required**. Product _id |
+
+
