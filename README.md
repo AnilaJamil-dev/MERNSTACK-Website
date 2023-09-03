@@ -62,7 +62,7 @@ Welcome to METANOIA! This project is a full-stack application built using the ME
 #### Update User
 
 ```http
-  PUT /api/updateuser/:id
+  PUT /api/updateuser
 ```
 
 | Parameter | Type     | Description                |
@@ -141,7 +141,7 @@ Welcome to METANOIA! This project is a full-stack application built using the ME
 #### Update Brand
 
 ```http
-  PUT /api/update-brand/:_id
+  PUT /api/update-brand
 ```
 
 | Parameter | Type     | Description                |
@@ -201,7 +201,7 @@ Welcome to METANOIA! This project is a full-stack application built using the ME
 #### Update Product
 
 ```http
-  PUT /api/update-product/:id
+  PUT /api/update-product
 ```
 
 | Parameter | Type     | Description                |
